@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALL Chats</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h3>All Animals hear!!!</h3>
+    <form method="get" action="/animals/new">
+        <button>Add New Animal</button>
+    </form>
+    <%for(let animal of animals){%>
+        <div class="animal">
+            <p>Name : <%=animal.name%>
+            </p>
+            Time and date for when it was added.
+            <p>
+               Time: <%=animal.created_at.toString().split(" ")[4]%></p>
+              <p> Date: <%=animal.created_at.toString().split(" ").slice(0,4).join(" -")%>
+            </p>
+            <form method="get" action="/animals/<%=animal._id%>/edit">
+                <button>edit</button>
+            </form>
+            <form method="post" action="/animals/<%=animal._id%>/delete?_method=DELETE">
+                <button>delete</button>
+            </form>
+        </div>
+        <br><br>
+        <%}%>
+</body>
+
+</html>

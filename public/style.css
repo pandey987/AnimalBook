@@ -1,0 +1,16 @@
+.animal{
+    background-color: rgb(200, 238, 238);
+    border-radius: 6px;
+    padding: 10px;
+    display: inline-block;
+    
+}
+/* .{
+    background-color: rgb(57, 106, 90);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+} */
+body{
+    margin-left: 20px;
+}
